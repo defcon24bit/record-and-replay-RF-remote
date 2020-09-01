@@ -12,4 +12,6 @@ raspberry PI
 radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
 ## record RF signal 
-
+```bash
+cd rpitx
+./rtlmenu.sh
