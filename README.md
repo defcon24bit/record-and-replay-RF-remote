@@ -18,4 +18,4 @@ cd rpitx
 
 ![](docs/pics/record-RF-menu-00001.png)
 
-<img src="docs/pics/record-RF-menu-00001.png width="100")
+<img src="docs/pics/record-RF-menu-00001.png width="100")>
