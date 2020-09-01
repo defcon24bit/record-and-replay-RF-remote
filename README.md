@@ -24,3 +24,4 @@ cd rpitx
 ![](docs/pics/record-RF-menu-00006.png)
 ![](docs/pics/record-RF-menu-00007.png)
 ![](docs/pics/record-RF-menu-00008.png)
+this fixes 
