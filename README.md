@@ -16,4 +16,6 @@ radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 cd rpitx
 ./rtlmenu.sh
 
-![](/docs/pics/record-RF-menu-00001.png)
+![](docs/pics/record-RF-menu-00001.png)
+
+<img src="docs/pics/record-RF-menu-00001.png width="100")
