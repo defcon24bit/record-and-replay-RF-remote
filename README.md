@@ -6,12 +6,12 @@ Text-->
 
 ## required hardware
 
-* raspberry PI 
+* Raspberry PI 
 * radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
 ## record RF signal 
 
-install https://github.com/F5OEO/rpitx
+install https://github.com/F5OEO/rpitx on your Raspberry PI
 
 ```bash
 cd rpitx
@@ -28,9 +28,22 @@ cd rpitx
 
 ## integrate with Home Assistant
 
-> This isn't required.  You only need 'something' exposed to the internet to receive the voice triggers.  
+> Home Assistant (hassio) isn't required.  You only need an **internet-exposed webhook** to receive the voice triggers.  Because my Home Assistant was already on the internet and supports webhooks I used that.  
 
-### create command_line switch to configuration.yaml
+#### create certificate on hassio and install it on your PI  
+
+> This is only required of your hassio runs on a different doesn't machine than rpitx.  
+
+create certficate on hassio
+```bash
+ssh-keygen -t rsa -b 4096
+```
+below command copies the certifcate onto your pi (command is run on hassio)
+```
+ssh-copy-id pi@192.168.1.203
+```
+
+#### create command_line switch to configuration.yaml
 
 ```yaml
 switch:
@@ -43,7 +56,7 @@ switch:
         friendly_name: Fan On
 ```
 
-### create an automation that exposes a webhook 
+#### create an automation that exposes a webhook 
 
 ```yaml
 automation:
