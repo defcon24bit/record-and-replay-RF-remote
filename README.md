@@ -1,5 +1,8 @@
-# record-and-replay-RF-remote
-Using a Raspberry PI, record any Radio Frequency (RF) remote signal and replay it with voice commands through Alexa, Google Home or Siri.  
+# record and replay Radio Frequency (RF) remote sigal.   
+Using a Raspberry PI, record any RF remote signal.  
+Then replay it with voice commands through Alexa, Google Home or Siri.
+Includes example how to integrate this with Home Assistant and IFTTT. 
+<!--Text-->
 
 ## project objective
 
