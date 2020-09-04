@@ -1,4 +1,4 @@
-# Record and replay Radio Frequency (RF) remote sigal.   
+# Record and replay Radio Frequency (RF) remote signal.   
 Using a Raspberry PI, record any RF remote signal.  Replay it with voice commands through Alexa, Google Home or Siri.  Includes example how to integrate with Home Assistant and IFTTT. 
 <!--Use voice commands to control devices that use a Radio Frequency (RF) remote.   
 Examples with picture: airconditioner, remote power plugs, fans and kichen hoods. 
