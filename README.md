@@ -1,18 +1,13 @@
-# record and replay Radio Frequency (RF) remote sigal.   
-Using a Raspberry PI, record any RF remote signal.  
-Then replay it with voice commands through Alexa, Google Home or Siri.
-Includes example how to integrate this with Home Assistant and IFTTT. 
-<!--Text-->
-
-## project objective
-
-Use voice commands to control devices that use a Radio Frequency (RF) remote.   
+# Record and replay Radio Frequency (RF) remote sigal.   
+Using a Raspberry PI, record any RF remote signal.  Replay it with voice commands through Alexa, Google Home or Siri.  Includes example how to integrate with Home Assistant and IFTTT. 
+<!--Use voice commands to control devices that use a Radio Frequency (RF) remote.   
 Examples with picture: airconditioner, remote power plugs, fans and kichen hoods. 
+Text-->
 
 ## required hardware
 
-raspberry PI
-radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
+* raspberry PI 
+* radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
 ## record RF signal 
 ```bash
