@@ -28,7 +28,7 @@ cd rpitx
 
 ## integrate with Home Assistant
 
-> Home Assistant (hassio) isn't required.  You only need an **internet-exposed webhook** to receive the voice triggers.  Because my Home Assistant was already on the internet and supports webhooks I used that.  
+> Home Assistant (hassio) isn't required.  You only need an **internet-exposed webhook** to receive the voice triggers.  I use hassio for that.
 
 #### create certificate on hassio and install it on your PI  
 
