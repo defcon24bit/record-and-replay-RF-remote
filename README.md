@@ -38,7 +38,7 @@ create certficate on hassio
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
-below command copies the certifcate onto your pi (command is run on hassio)
+send certifcate to your pi (command still run on hassio)
 ```
 ssh-copy-id pi@192.168.1.203
 ```
@@ -71,8 +71,3 @@ automation:
       service: switch.turn_on
     mode: single
 ```
-
-
-
-
-
