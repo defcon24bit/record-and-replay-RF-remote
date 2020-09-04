@@ -32,7 +32,7 @@ cd rpitx
 
 #### create certificate on hassio and install it on your PI  
 
-> This is only required of your hassio runs on a different doesn't machine than rpitx.  
+> Only required if hassio runs on a different machine than rpitx.  The certificates will allow hassio to remote execute a command (ssh) on the PI without a password prompt.     
 
 create certficate on hassio
 ```bash
