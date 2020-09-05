@@ -1,8 +1,6 @@
 # record and replay Radio Frequency (RF) remote signal 
 Record any RF signal and trigger replay with voice commands.  
-> Common use cases: airconditioners, remote power plugs, fans and kitchen hoods.     
-<!--comment
--->
+<!--Common use cases: airconditioners, remote power plugs, fans and kitchen hoods-->
 
 ## required hardware
 
@@ -105,16 +103,12 @@ automation:
 ```
 ## create IFTTT Applets
 
-1. Login [IFTTT](https://ifttt.com/).
-2. Create a [new Applet](https://ifttt.com/create).
-3. Select '+This'.  
-4. Select 'Amazon Alexa' or 'Google Assistant'. 
-2. Select 'Say a specific/simple phrase'.
-3. Select '+That'.
-4. Select 'Webhooks'.
-5. Select 'Make a web request'.
-6. URL ```https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>```
-7. Method: POST.
+1. Create a [new IFTTT Applet](https://ifttt.com/create).
+2. Select '+This' -> 'Amazon Alexa' or 'Google Assistant' -> 'Say a specific/simple phrase'.
+3. Select '+That' -> 'Webhooks' -> 'Make a web request'.
+
+URL ```https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>```
+Method: ```POST.
 
 ## credits 
 
