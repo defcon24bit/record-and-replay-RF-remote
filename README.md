@@ -17,7 +17,7 @@ on your Pi
 > To find the frequency, your can install [SDR](https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/) software.  If the remote has an FCC id, you can look that up [here](https://fccid.io).  Common frequencies are: 433.92, 868.3 and 315 MHz.
 ```bash
 cd rpitx
-# this records on 868 frequancy and writes it to fan-on-button.iq file
+# this records on 868.00 frequency and writes it to fan-on-button.iq file
 rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
 5. CTRL + C to stop recording.
