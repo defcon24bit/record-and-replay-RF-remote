@@ -1,8 +1,8 @@
 # record and replay Radio Frequency (RF) remote signal 
-Record any RF signal and trigger replay with voice commands.     
-<!--Use voice commands to control devices that use a Radio Frequency (RF) remote.   
-Examples with picture: airconditioner, remote power plugs, fans and kichen hoods. 
-Text-->
+Record any RF signal and trigger replay with voice commands.  
+> Common use cases: airconditioners, remote power plugs, fans and kitchen hoods.     
+<!--comment
+-->
 
 ## required hardware
 
