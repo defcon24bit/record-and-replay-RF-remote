@@ -11,7 +11,8 @@ Text-->
 
 ## record RF signal 
 
-1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) on your Pi (previously called Raspbian). 
+on your Pi
+1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian). 
 2. Connect RTL-SDR dongle to your Pi. 
 3. Install https://github.com/F5OEO/rpitx
 4. Launch the rpitx menu.
@@ -19,7 +20,14 @@ Text-->
 cd rpitx
 ./rtlmenu.sh
 ```
-5. Set frequency, record and test replay - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md). 
+5. Set frequency, record and test replay - see [screenshot examples](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md).  
+6. Rename the /rpitx/record.iq file.  
+> The menu always uses the same file, so to avoid overwriting rename the file
+```bash
+cp record.iq on-button.iq
+```
+7. Go back to step 4. and repeat until you've recorded all buttons on your remote.    
+
 
 ## create webhook
 
