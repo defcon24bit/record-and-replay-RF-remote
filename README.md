@@ -12,7 +12,7 @@ Record any RF signal and trigger replay with voice commands.
 on your Pi
 1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian). 
 2. Install https://github.com/F5OEO/rpitx
-3. Connect the RTL-SDR dongle to your Pi. 
+3. Connect the RTL-SDR dongle to your Pi.
 4. Record remote signal.  
 > To find the frequency, your can install [SDR](https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/) software.  If the remote has an FCC id, you can look that up [here](https://fccid.io).  Common frequencies are: 433.92, 868.3 and 315 MHz.
 ```bash
@@ -21,7 +21,8 @@ cd rpitx
 rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
 5. CTRL + C to stop recording.
-6. Replay recording. 
+6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pics/pi-elect-wire-on-pin-7.png).
+7. Replay recording. 
 ```bash
 sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-on-button.iq
 ```
