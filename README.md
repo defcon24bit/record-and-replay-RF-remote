@@ -120,5 +120,5 @@ automation:
 
 All rights of the original authors reserved. 
 
-[license](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/license)
+[license](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/LICENSE)
 
