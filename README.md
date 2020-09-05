@@ -9,9 +9,9 @@ Text-->
 * Raspberry PI 
 * radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
-## record RF signal 
+## record signal 
 
-install https://github.com/F5OEO/rpitx on your Raspberry PI
+install https://github.com/F5OEO/rpitx on your Raspberry PI with RTL-SDR dongle inserted
 
 ```bash
 cd rpitx
@@ -25,20 +25,21 @@ cd rpitx
 ![](docs/pics/record-RF-menu-00007.png)
 ![](docs/pics/record-RF-menu-00008.png)
 
-## integrate with Home Assistant
+## create webhook
 
-> Home Assistant (hassio) isn't required.  You only need an **internet-exposed webhook** to receive the voice triggers.  I use hassio for that.
+You'll need internet-facing webhooks to receive the voice triggers.  
+I'll use [Home Assistant](https://www.home-assistant.io) (hassio) for that.  
 
-#### create certificate on hassio and install it on your PI  
+#### create certificate on hassio
 
-> Only required if hassio runs on a different machine than rpitx.  The certificates will allow hassio to remote execute a command (ssh) on the PI without a password prompt.     
+A certificate allows hassio to remote execute a commands on your PI without a password prompt. 
+> Only required if hassio runs on a different machine than rpitx.  
+>     
 
-create certficate on hassio
 ```bash
+# create certificate on hassio
 ssh-keygen -t rsa -b 4096
-```
-send certifcate to your pi (command still run on hassio)
-```
+# send certificate to your pi (command still run on hassio)
 ssh-copy-id pi@192.168.1.203
 ```
 
