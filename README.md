@@ -14,7 +14,7 @@ Text-->
 on your Pi
 1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian). 
 2. Install https://github.com/F5OEO/rpitx
-3. Connect RTL-SDR dongle to your Pi. 
+3. Connect the RTL-SDR dongle to your Pi. 
 4. Record remote signal.  
 ```bash
 cd rpitx
