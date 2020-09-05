@@ -61,7 +61,7 @@ ssh-keygen -t rsa -b 4096
 ```
 send certificate to your pi (command still run on HA)
 ```bash
-ssh-copy-id pi@192.168.1.203
+ssh-copy-id pi@<YOUR.PI.IP.ADDRESS>
 ```
 > Initially,  HA gave errors when running the remote ssh commands.  I can't remember the exact fix.  It was either the HA user context not having access to the key files or the file and folder permissions for the certificate keys were not set correctly.  I think below two things fixed it.  Let me know if this works for you.
 
@@ -81,7 +81,7 @@ switch:
   - platform: command_line
     switches:
       fan_on:
-        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@192.168.1.203 sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
+        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
         command_off: off
         command_state: off
         friendly_name: Fan On
