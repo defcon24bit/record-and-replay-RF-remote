@@ -54,7 +54,7 @@ On a second machine:
 
 #### create certificate on HA
 
-The certificate allows HA to remote execute a commands on your PI without a password prompt. 
+The certificate allows HA to remote execute commands on your PI without a password prompt. 
   
 create certificate
 ```bash
