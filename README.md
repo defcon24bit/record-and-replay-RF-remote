@@ -19,13 +19,7 @@ Text-->
 cd rpitx
 ./rtlmenu.sh
 ```
-![](docs/pics/record-RF-menu-00002.png)
-![](docs/pics/record-RF-menu-00003.png)
-![](docs/pics/record-RF-menu-00004.png)
-![](docs/pics/record-RF-menu-00005.png)
-![](docs/pics/record-RF-menu-00006.png)
-![](docs/pics/record-RF-menu-00007.png)
-![](docs/pics/record-RF-menu-00008.png)
+
 
 ## create webhook
 
