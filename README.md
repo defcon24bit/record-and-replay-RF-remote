@@ -95,7 +95,7 @@ automation:
   - alias: webhook_fan_on
     trigger:
     - platform: webhook
-      webhook_id: <pick-a-random-webhook-id>
+      webhook_id: <PICK-A-RANDOM-WEBHOOK-ID>
     condition: []
     action:
     - data: {}
@@ -103,3 +103,18 @@ automation:
       service: switch.turn_on
     mode: single
 ```
+## create IFTTT recipies
+
+1. Login into or create an [IFTTT](https://ifttt.com/) account.
+2. Create a [new recipie](https://ifttt.com/create).
+3. Select '+This'.  
+
+#### Amazon Alexa
+
+1. Select 'Amazon Alexa'.
+2. Select 'Say a specific phrase'.
+3. Select '+That'.
+4. Select 'Webhooks'.
+5. Select 'Make a web request'.
+6. URL https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>
+7. Method: POST.
