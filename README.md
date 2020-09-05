@@ -64,7 +64,7 @@ send certificate to your pi (command still run on HA)
 ```bash
 ssh-copy-id pi@192.168.1.203
 ```
-> Initially,  HA gave errors when running the remote ssh commands.  I can't remember the exact fix.  It was either a HA user context not having access to the key files or the file and folder permissions for the certificate keys were not set correctly.  I think below two things fixed it.  Let me know if this works for you.
+> Initially,  HA gave errors when running the remote ssh commands.  I can't remember the exact fix.  It was either the HA user context not having access to the key files or the file and folder permissions for the certificate keys were not set correctly.  I think below two things fixed it.  Let me know if this works for you.
 
 on HA
 copy the id_rsa to the HA /config folder
