@@ -9,10 +9,11 @@ Text-->
 * Raspberry PI 
 * radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
-## record signal 
+## record RF signal 
 
-install https://github.com/F5OEO/rpitx on your Raspberry PI with RTL-SDR dongle inserted
+First, install https://github.com/F5OEO/rpitx on your Raspberry PI with the RTL-SDR dongle inserted.
 
+Then launch the rpitx menu.
 ```bash
 cd rpitx
 ./rtlmenu.sh
@@ -32,14 +33,15 @@ I'll use [Home Assistant](https://www.home-assistant.io) (hassio) for that.
 
 #### create certificate on hassio
 
+> Only required if hassio runs on a different machine than rpitx.
 A certificate allows hassio to remote execute a commands on your PI without a password prompt. 
-> Only required if hassio runs on a different machine than rpitx.  
->     
-
+  
+create certificate
 ```bash
-# create certificate on hassio
 ssh-keygen -t rsa -b 4096
-# send certificate to your pi (command still run on hassio)
+```
+send certificate to your pi (command still run on hassio)
+```bash
 ssh-copy-id pi@192.168.1.203
 ```
 
