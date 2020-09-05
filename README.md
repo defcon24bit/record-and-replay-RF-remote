@@ -19,7 +19,7 @@ Text-->
 cd rpitx
 ./rtlmenu.sh
 ```
-
+5. Set frequency, record and test replay - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/docs/record-RF-signal-screenshots.md). 
 
 ## create webhook
 
