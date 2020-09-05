@@ -6,12 +6,12 @@ Text-->
 
 ## required hardware
 
-* Raspberry Pi 
+* 2x Raspberry Pi 
 * radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
 ## record RF signal 
 
-on your Pi
+on your first Pi
 1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian). 
 2. Install https://github.com/F5OEO/rpitx
 3. Connect RTL-SDR dongle to your Pi. 
@@ -40,26 +40,31 @@ cp record.iq on-button.iq
 7. Go back to step 4. and repeat until you've recorded all buttons on your remote.    
 -->
 
-## create webhook
+## create webhooks
 
-You'll need internet-facing webhooks to receive the voice triggers.  
-I'll use [Home Assistant](https://www.home-assistant.io) (hassio) for that.  
+You need internet-facing webhooks to receive the voice triggers we'll create later.   
+Below example uses [Home Assistant](https://www.home-assistant.io) (HA) to do that.  
 
-#### create certificate on hassio
+#### install HA
 
-> Only required if hassio runs on a different machine than rpitx.
-A certificate allows hassio to remote execute a commands on your PI without a password prompt. 
+On your second Pi
+1. Install https://www.home-assistant.io/getting-started/
+2. Add DuckDNS add-on.  This will put your HA on the internet.  
+
+#### create certificate on HA
+
+> The certificate allows HA to remote execute a commands on your PI without a password prompt. 
   
 create certificate
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
-send certificate to your pi (command still run on hassio)
+send certificate to your pi (command still run on HA)
 ```bash
 ssh-copy-id pi@192.168.1.203
 ```
 
-#### create command_line switch to configuration.yaml
+#### add command_line switch to your configuration.yaml
 
 ```yaml
 switch:
@@ -72,7 +77,7 @@ switch:
         friendly_name: Fan On
 ```
 
-#### create an automation that exposes a webhook 
+#### create automation that exposes a webhook 
 
 ```yaml
 automation:
