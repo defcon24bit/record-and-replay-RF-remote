@@ -116,5 +116,5 @@ automation:
 3. Select '+That'.
 4. Select 'Webhooks'.
 5. Select 'Make a web request'.
-6. URL https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>
+6. URL ```https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>```
 7. Method: POST.
