@@ -115,3 +115,10 @@ automation:
 5. Select 'Make a web request'.
 6. URL ```https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>```
 7. Method: POST.
+
+## credits 
+
+All rights of the original authors reserved. 
+
+[license](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/license)
+
