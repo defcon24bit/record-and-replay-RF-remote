@@ -108,11 +108,8 @@ automation:
 1. Login [IFTTT](https://ifttt.com/).
 2. Create a [new Applet](https://ifttt.com/create).
 3. Select '+This'.  
-
-#### Amazon Alexa
-
-1. Select 'Amazon Alexa'.
-2. Select 'Say a specific phrase'.
+4. Select 'Amazon Alexa' or 'Google Assistant'. 
+2. Select 'Say a specific/simple phrase'.
 3. Select '+That'.
 4. Select 'Webhooks'.
 5. Select 'Make a web request'.
