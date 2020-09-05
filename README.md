@@ -14,6 +14,7 @@ on your Pi
 2. Install https://github.com/F5OEO/rpitx
 3. Connect the RTL-SDR dongle to your Pi. 
 4. Record remote signal.  
+> To find the frequency, your can install [SDR](https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/) software.  If the remote has an FCC id, you can look that up [here](https://fccid.io).  Common frequencies are: 433.92, 868.3 and 315 MHz.
 ```bash
 cd rpitx
 # this records on 868 frequancy and writes it to fan-on-button.iq file
@@ -108,11 +109,11 @@ automation:
 3. Select '+That' -> 'Webhooks' -> 'Make a web request'.
 
 URL ```https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>```
-Method: ```POST.
+Method: ```POST```.
 
 ## credits 
 
 All rights of the original authors reserved. 
 
-[license](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/LICENSE)
+[Creative Commons Zero v1.0 Universal license](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/LICENSE)
 
