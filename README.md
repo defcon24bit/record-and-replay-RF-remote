@@ -6,14 +6,15 @@ Text-->
 
 ## required hardware
 
-* Raspberry PI 
+* Raspberry Pi 
 * radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
 ## record RF signal 
 
-First, install https://github.com/F5OEO/rpitx on your Raspberry PI with the RTL-SDR dongle inserted.
-
-Then launch the rpitx menu.
+1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) on your Pi (previously called Raspbian). 
+2. Connect RTL-SDR dongle to your Pi. 
+3. Install https://github.com/F5OEO/rpitx
+4. Launch the rpitx menu.
 ```bash
 cd rpitx
 ./rtlmenu.sh
