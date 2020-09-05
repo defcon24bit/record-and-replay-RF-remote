@@ -103,10 +103,10 @@ automation:
       service: switch.turn_on
     mode: single
 ```
-## create IFTTT recipies
+## create IFTTT Applets
 
-1. Login into or create an [IFTTT](https://ifttt.com/) account.
-2. Create a [new recipie](https://ifttt.com/create).
+1. Login [IFTTT](https://ifttt.com/).
+2. Create a [new Applet](https://ifttt.com/create).
 3. Select '+This'.  
 
 #### Amazon Alexa
