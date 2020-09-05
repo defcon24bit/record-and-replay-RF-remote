@@ -44,7 +44,7 @@ cp record.iq on-button.iq
 
 You need internet-facing webhooks to intercept the voice triggers we'll create later. 
 Below example uses [Home Assistant](https://www.home-assistant.io) (HA) installed on a second machine to do that.  
-> Installing webhooks on the PI without HA and without the need for a second machine should be possible.  Please share if you get that working.  
+> Adding webhooks to your PI, without HA and without the need for a second machine should be possible.  Please share if you get that working.  
 
 #### install HA
 
@@ -54,17 +54,17 @@ On a second machine:
 
 #### create certificate on HA
 
-> The certificate allows HA to remote execute a commands on your PI without a password prompt. 
+The certificate allows HA to remote execute a commands on your PI without a password prompt. 
   
 create certificate
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
-send certificate to your first pi (command still run on HA)
+send certificate to your pi (command still run on HA)
 ```bash
 ssh-copy-id pi@192.168.1.203
 ```
-> I think HA gave errors when running the remote ssh commands.  I can't remeber that exact fix.  It was either a HA user context issue or the file and folder permissions for the certificate keys were not set correctly.  I think below two commands fixed the issue.  Let me know if this works for you.  
+> I think HA gave errors when running the remote ssh commands.  I can't remember the exact fix.  It was either a HA user context issue or the file and folder permissions for the certificate keys were not set correctly.  I think below two commands fixed the issue.  Let me know if this works for you.  
 connect to your PI
 ```bash
 chmod 700 ~/.ssh/
