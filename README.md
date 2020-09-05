@@ -6,12 +6,12 @@ Text-->
 
 ## required hardware
 
-* 2x Raspberry Pi 
+* Raspberry Pi 
 * radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
 
 ## record RF signal 
 
-on your first Pi
+on your Pi
 1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian). 
 2. Install https://github.com/F5OEO/rpitx
 3. Connect RTL-SDR dongle to your Pi. 
@@ -42,12 +42,13 @@ cp record.iq on-button.iq
 
 ## create webhooks
 
-You need internet-facing webhooks to receive the voice triggers we'll create later.   
-Below example uses [Home Assistant](https://www.home-assistant.io) (HA) to do that.  
+You need internet-facing webhooks to intercept the voice triggers we'll create later. 
+Below example uses [Home Assistant](https://www.home-assistant.io) (HA) installed on a second machine to do that.  
+> Installing webhooks on the PI without HA and without the need for a second machine should be possible.  Please share if you get that working.  
 
 #### install HA
 
-On your second Pi
+On a second machine:
 1. Install https://www.home-assistant.io/getting-started/
 2. Add DuckDNS add-on.  This will put your HA on the internet.  
 
@@ -59,12 +60,18 @@ create certificate
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
-send certificate to your pi (command still run on HA)
+send certificate to your first pi (command still run on HA)
 ```bash
 ssh-copy-id pi@192.168.1.203
 ```
+> I think HA gave errors when running the remote ssh commands.  I can't remeber that exact fix.  It was either a HA user context issue or the file and folder permissions for the certificate keys were not set correctly.  I think below two commands fixed the issue.  Let me know if this works for you.  
+connect to your PI
+```bash
+chmod 700 ~/.ssh/
+chmod 600 ~/.ssh/*
+```
 
-#### add command_line switch to your configuration.yaml
+#### add command_line switch to your HA configuration.yaml
 
 ```yaml
 switch:
@@ -77,7 +84,7 @@ switch:
         friendly_name: Fan On
 ```
 
-#### create automation that exposes a webhook 
+#### create automation on HA that exposes a webhook 
 
 ```yaml
 automation:
