@@ -13,9 +13,20 @@ Text-->
 
 on your Pi
 1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian). 
-2. Connect RTL-SDR dongle to your Pi. 
-3. Install https://github.com/F5OEO/rpitx
-4. Launch the rpitx menu.
+2. Install https://github.com/F5OEO/rpitx
+3. Connect RTL-SDR dongle to your Pi. 
+4. Record remote signal.  
+```bash
+cd rpitx
+# this records on 868 frequancy and writes it to fan-on-button.iq file
+rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
+```
+5. CTRL + C to stop recording.
+6. Replay recording. 
+```bash
+sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-on-button.iq
+```
+<!--4. Launch the rpitx menu.
 ```bash
 cd rpitx
 ./rtlmenu.sh
@@ -27,7 +38,7 @@ cd rpitx
 cp record.iq on-button.iq
 ```
 7. Go back to step 4. and repeat until you've recorded all buttons on your remote.    
-
+-->
 
 ## create webhook
 
