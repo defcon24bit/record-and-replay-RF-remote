@@ -47,7 +47,7 @@ Protecting this setup is beyond the scope of this repository.
 > It's not a question if you get hacked, but when.  Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
 
 On your Pi
-> If you intend to integrate with [Home Assistant](https://www.home-assistant.io) (HA) you can skip the next step and jump direct to [integrate with Home Assistant](##-integrate-with-home-assistant).  This is because HA has native webhook support. 
+> If you intend to integrate with [Home Assistant](https://www.home-assistant.io) (HA) you can skip the next step and jump direct to [integrate with Home Assistant](##-integrate-with-Home-Assistant).  This is because HA has native webhook support. 
 
 Install and configure https://github.com/ncarlier/webhookd
 
