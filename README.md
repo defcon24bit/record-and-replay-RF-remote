@@ -53,8 +53,7 @@ Install and configure https://github.com/ncarlier/webhookd
 
 ## integrate with Home Assistant 
 
-Below example uses Home Assistant (HA) installed on a second machine.  
-Running everything on one Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
+Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
 
 #### install HA
 
