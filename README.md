@@ -5,7 +5,7 @@ Record any RF signal and trigger replay with voice commands.
 ## required hardware
 
 * Raspberry Pi 
-* radio receiver USB dongle (RTL-SDR with RTL2832U shipset)
+* radio receiver USB dongle (RTL-SDR with RTL2832U chipset)
 
 ## record RF signal 
 
@@ -43,8 +43,18 @@ cp record.iq on-button.iq
 ## create webhooks
 
 You need internet-facing webhooks to intercept the voice triggers we'll create later. 
-Below example uses [Home Assistant](https://www.home-assistant.io) (HA) installed on a second machine to do that.  
-> Adding webhooks to your PI, without HA and without the need for a second machine should be possible.  Please share if you get that working.  
+Protecting this setup is beyond the scope of this repository. 
+> It's not a question if you get hacked, but when.  Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
+
+On your Pi
+> If you intend to integrate with [Home Assistant](https://www.home-assistant.io) (HA) you can skip the next step and move to install HA below.  This is because HA has native webhook support. 
+
+Install and configure https://github.com/ncarlier/webhookd
+
+## integrate with Home Assistant 
+
+Below example uses Home Assistant (HA) installed on a second machine.  
+Running everything on one Pi shouldn't be a problem and then you can skip the create certifcate on HA part below.  
 
 #### install HA
 
