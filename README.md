@@ -1,5 +1,6 @@
 # record and replay Radio Frequency (RF) remote signal 
-Record any RF signal and trigger replay with voice commands.  
+Record any replay any RF signal.  
+(optional) integrate with Home Assistant and trigger replay with Alexa or Google Home.    
 <!--Common use cases: airconditioners, remote power plugs, fans and kitchen hoods-->
 
 ## required hardware
@@ -40,17 +41,6 @@ cp record.iq on-button.iq
 7. Go back to step 4. and repeat until you've recorded all buttons on your remote.    
 -->
 
-## create webhooks
-
-You need internet-facing webhooks to intercept the voice triggers we'll create later. 
-Protecting this setup is beyond the scope of this repository. 
-> It's not a question if you get hacked, but when.  Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
-
-On your Pi
-> If you intend to integrate with [Home Assistant](https://www.home-assistant.io) (HA) you can skip the next step and jump direct to [integrate with Home Assistant](#integrate-with-home-assistant).  This is because HA has native webhook support. 
-
-Install and configure https://github.com/ncarlier/webhookd
-
 ## integrate with Home Assistant 
 
 Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
@@ -84,9 +74,10 @@ chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 ```
 
-#### add command_line switch to your HA configuration.yaml
+#### add as switch to HA 
 
 ```yaml
+# configuration.yaml
 switch:
   - platform: command_line
     switches:
@@ -97,7 +88,25 @@ switch:
         friendly_name: Fan On
 ```
 
+#### expose switch to 'emulated hue' component 
+
+This will allow Alexa to see the switch as a light.   
+
+```yaml
+# configuration.yaml
+emulated_hue:
+  listen_port: 80
+  expose_by_default: false
+  entities:
+    switch.fan_on:
+      name: "fan on"
+      hidden: false
+```
+
+
 #### create automation on HA that exposes a webhook 
+
+This will allow integration with Google Home through for example IFTTT. 
 
 ```yaml
 automation:
@@ -112,6 +121,19 @@ automation:
       service: switch.turn_on
     mode: single
 ```
+
+
+## create webhooks
+
+You need internet-facing webhooks to intercept the voice triggers we'll create later. 
+Protecting this setup is beyond the scope of this repository. 
+> It's not a question if you get hacked, but when.  Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
+
+On your Pi
+> If you intend to integrate with [Home Assistant](https://www.home-assistant.io) (HA) you can skip the next step and jump direct to [integrate with Home Assistant](#integrate-with-home-assistant).  This is because HA has native webhook support. 
+
+Install and configure https://github.com/ncarlier/webhookd
+
 ## create IFTTT Applets
 
 1. Create a [new IFTTT Applet](https://ifttt.com/create).
