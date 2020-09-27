@@ -22,6 +22,8 @@ cd rpitx
 # this records on 868.00 frequency and writes it to fan-on-button.iq file
 rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
+> this is also possible via the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)
+
 5. CTRL + C to stop recording.
 6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pics/pi-elect-wire-on-pin-7.png).
 7. Replay recording. 
