@@ -1,7 +1,6 @@
 # record and replay Radio Frequency (RF) remote signal 
 Record any replay any RF signal. (optional) Integrate with Home Assistant (HA). Trigger replay with Alexa or Google Home.  
 ![](docs/pics/project-drawing.png)
-
 Common use cases: airconditioner, remote power plug, fan, garage door, shades and kitchen hood.
 
 ## required hardware
