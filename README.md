@@ -45,13 +45,9 @@ cp record.iq on-button.iq
 
 ## integrate with Home Assistant
 
+> If you're not running HA yet, you should definitely check it out - start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
+
 Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
-
-#### install HA
-
-On a second machine:
-1. Install https://www.home-assistant.io/getting-started/
-2. Add DuckDNS add-on.  This will put your HA on the internet.  
 
 #### create certificate on HA
 
