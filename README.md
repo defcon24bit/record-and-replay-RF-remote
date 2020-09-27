@@ -1,5 +1,5 @@
 # record and replay Radio Frequency (RF) remote signal 
-Record any replay any RF signal. (optional) Integrate with Home Assistant (HA). Trigger replay with Alexa or Google Home.  
+Record any replay any RF signal. (optional) Integrate with Home Assistant. Trigger replay with Alexa or Google Home.  
 ![](docs/pics/project-drawing.png)
 Common use cases: airconditioner, remote power plug, fan, garage door, shades and kitchen hood.
 
@@ -8,7 +8,7 @@ Common use cases: airconditioner, remote power plug, fan, garage door, shades an
 * Raspberry Pi 
 * radio receiver USB dongle (RTL-SDR with RTL2832U chipset)
 
-## record RF signal 
+## record and replay RF signal 
 
 on your Pi
 1. Install [Raspberry Pi OS](https://www.raspberrypi.org/downloads/raspberry-pi-os/). 
@@ -43,7 +43,7 @@ cp record.iq on-button.iq
 7. Go back to step 4. and repeat until you've recorded all buttons on your remote.    
 -->
 
-## integrate with Home Assistant 
+## integrate with Home Assistant
 
 Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
 
