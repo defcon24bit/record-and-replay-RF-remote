@@ -1,7 +1,8 @@
 # record and replay Radio Frequency (RF) remote signal 
-Record any replay any RF signal. (optional) Integrate with Home Assistant (HA). Trigger replay with Alexa or Google Home.    
+Record any replay any RF signal. (optional) Integrate with Home Assistant (HA). Trigger replay with Alexa or Google Home.  
+![](docs/pics/project-drawing.png)
 
-<!--Common use cases: airconditioners, remote power plugs, fans and kitchen hoods-->
+Common use cases: airconditioner, remote power plug, fan, garage door, shades and kitchen hood.
 
 ## required hardware
 
@@ -15,7 +16,7 @@ on your Pi
 2. Install https://github.com/F5OEO/rpitx
 3. Connect the RTL-SDR dongle to your Pi.
 4. Record remote signal.  
-> To find the frequency, your can install [SDR](https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/) software.  If the remote has an FCC id, you can look that up [here](https://fccid.io).  Common frequencies are: 433.92, 868.3 and 315 MHz.
+> To find the frequency, your can install [SDR](https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/) software.  If the remote has an FCC id, you can look that up [here](https://fccid.io).  Common frequencies are: 433.92, 868.3, 315, 288, 300, 303, 306, 310, 318, 330, 390, 403.55 and 418 MHz.
 ```bash
 cd rpitx
 # this records on 868.00 frequency and writes it to fan-on-button.iq file
