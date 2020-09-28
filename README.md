@@ -1,7 +1,7 @@
 # record and replay Radio Frequency (RF) remote signal 
 Record any replay any RF signal. (optional) Integrate with Home Assistant. Trigger replay with Alexa or Google Home.  
 ![](docs/pics/project-drawing.png)
-Common use cases: airconditioner, remote power plug, fan, garage door, shades and kitchen hood.
+Common use cases: airconditioners, remote power plugs, fans, garage doors, shades and kitchen hoods.
 
 ## required hardware
 
@@ -18,10 +18,10 @@ on your Pi
 > To find the frequency, your can install [SDR](https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/) software.  If the remote has an FCC id, you can look that up [here](https://fccid.io).  Common frequencies are: 433.92, 868.3, 315, 288, 300, 303, 306, 310, 318, 330, 390, 403.55 and 418 MHz.
 ```bash
 cd rpitx
-# this records on 868.00 frequency and writes it to fan-on-button.iq file
+# this records on 868.00 MHz frequency and writes it to a fan-on-button.iq file
 rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
-> this is also possible via the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)
+> above is also possible via the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)
 
 5. CTRL + C to stop recording.
 6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pics/pi-elect-wire-on-pin-7.png).
@@ -45,7 +45,26 @@ cp record.iq on-button.iq
 
 ## integrate with Home Assistant
 
-> If you're not running HA yet, you should definitely check it out - start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
+> If you don't have HA yet, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
+
+#### add as switch 
+
+Create a command line switch for everyone recording you want to replay.
+
+```yaml
+# configuration.yaml
+switch:
+  - platform: command_line
+    switches:
+      fan_on:
+# ssh only required if HA and rpitx run on different machines
+        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
+        command_off: off
+# HA doesn't get feedback if the device state (on or off).  So always return the switch to off. 
+        command_state: off
+        friendly_name: Fan On
+```
+
 
 Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
 
@@ -72,19 +91,6 @@ chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 ```
 
-#### add as switch to HA 
-
-```yaml
-# configuration.yaml
-switch:
-  - platform: command_line
-    switches:
-      fan_on:
-        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
-        command_off: off
-        command_state: off
-        friendly_name: Fan On
-```
 
 #### expose switch to 'emulated hue' component 
 
