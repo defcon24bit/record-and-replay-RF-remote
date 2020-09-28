@@ -45,7 +45,7 @@ cp record.iq on-button.iq
 
 ## integrate with Home Assistant
 
-> If you don't have HA yet, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
+If you don't have HA yet, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
 
 #### add as switch 
 
@@ -80,14 +80,31 @@ emulated_hue:
       hidden: false
 ```
 
+#### create automation that exposes switch as a webhook 
 
+This will allow you to remote trigger the switch via the internet. 
+Example use case: Google Home trigger reply with IFTTT. 
 
-Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
+```yaml
+automation:
+  - alias: webhook_fan_on
+    trigger:
+    - platform: webhook
+      webhook_id: <PICK-A-RANDOM-WEBHOOK-ID>
+    condition: []
+    action:
+    - data: {}
+      entity_id: switch.fan_on
+      service: switch.turn_on
+    mode: single
+```
 
 #### create certificate on HA
 
+> Only required if HA and rpitx run on different machines. 
+
 The certificate allows HA to remote execute commands on your PI without a password prompt. 
-  
+
 create certificate
 ```bash
 ssh-keygen -t rsa -b 4096
@@ -106,27 +123,6 @@ on your Pi
 chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 ```
-
-
-
-#### create automation on HA that exposes a webhook 
-
-This will allow integration with Google Home through for example IFTTT. 
-
-```yaml
-automation:
-  - alias: webhook_fan_on
-    trigger:
-    - platform: webhook
-      webhook_id: <PICK-A-RANDOM-WEBHOOK-ID>
-    condition: []
-    action:
-    - data: {}
-      entity_id: switch.fan_on
-      service: switch.turn_on
-    mode: single
-```
-
 
 ## create webhooks
 
