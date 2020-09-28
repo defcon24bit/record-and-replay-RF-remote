@@ -2,7 +2,8 @@
 
 1. Install [Home Assistant](https://www.home-assistant.io/getting-started/).
 2. Add DuckDNS add-on. This incudes Let's Encrypt.  See Add-on store under Supervisor.   
-3. Block IPs that try brute force logins.
+
+Tip: block IPs that try to brute force logins.
 ```yaml
 # configuration.yaml
 http:
