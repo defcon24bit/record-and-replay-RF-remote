@@ -60,10 +60,26 @@ switch:
 # ssh only required if HA and rpitx run on different machines
         command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
         command_off: off
-# HA doesn't get feedback if the device state (on or off).  So always return the switch to off. 
+# HA doesn't get feedback if the device state is on or off.  So always return the switch state to off. 
         command_state: off
         friendly_name: Fan On
 ```
+
+#### expose switch to 'emulated hue' component 
+
+This will allow Alexa to see the switch as a Philips hue light.
+
+```yaml
+# configuration.yaml
+emulated_hue:
+  listen_port: 80
+  expose_by_default: false
+  entities:
+    switch.fan_on:
+      name: "fan on"
+      hidden: false
+```
+
 
 
 Below example uses Home Assistant (HA) installed on a second machine.  Running everything on the same Pi shouldn't be a problem and then you can skip the create certifcate on HA part.  
@@ -91,21 +107,6 @@ chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 ```
 
-
-#### expose switch to 'emulated hue' component 
-
-This will allow Alexa to see the switch as a light.   
-
-```yaml
-# configuration.yaml
-emulated_hue:
-  listen_port: 80
-  expose_by_default: false
-  entities:
-    switch.fan_on:
-      name: "fan on"
-      hidden: false
-```
 
 
 #### create automation on HA that exposes a webhook 
