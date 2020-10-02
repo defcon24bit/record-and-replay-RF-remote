@@ -23,9 +23,9 @@ rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
 > above can also be done through the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)
 
-5. CTRL + C to stop recording.
+5. CTRL + C to stop recording. (You can remove the RTL-SDR dongle when you're done recoding.  It's not required for sending)    
 6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pics/pi-elect-wire-on-pin-7.png).
-7. Replay recording. 
+7. Replay recording.  
 ```bash
 sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-on-button.iq
 ```
@@ -47,7 +47,7 @@ cp record.iq on-button.iq
 
 If you don't have HA yet, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
 
-#### add as switch 
+### add as switch 
 
 Create a command line switch for everyone recording you want to replay.
 
@@ -57,15 +57,15 @@ switch:
   - platform: command_line
     switches:
       fan_on:
-# ssh only required if HA and rpitx run on different machines
+# ssh is only required if HA and rpitx run on different machines
         command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
         command_off: off
-# HA doesn't get feedback if the device state is on or off.  So always return the switch state to off. 
+# HA doesn't get feedback if the device is on or off.  So always return the switch back to off state.  
         command_state: off
         friendly_name: Fan On
 ```
 
-#### expose switch to 'emulated hue' component 
+### expose switch to 'emulated hue' component 
 
 This will allow Alexa to see the switch as a Philips hue light.
 
@@ -80,10 +80,10 @@ emulated_hue:
       hidden: false
 ```
 
-#### create automation that exposes switch as a webhook 
+### create automation that exposes switch as a webhook 
 
-This will allow you to remote trigger the switch via the internet. 
-Example use case: Google Home trigger reply with IFTTT. 
+This will allow you to remotely trigger the switch via an HTTP POST request. 
+Can be used for Google Home for example. 
 
 ```yaml
 automation:
@@ -101,8 +101,7 @@ automation:
 
 #### create certificate on HA
 
-> Only required if HA and rpitx run on different machines. 
-
+Only required if HA and rpitx run on different machines. 
 The certificate allows HA to remote execute commands on your PI without a password prompt. 
 
 create certificate
