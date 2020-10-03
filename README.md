@@ -80,6 +80,11 @@ emulated_hue:
       hidden: false
 ```
 
+Alexa has trouble understanding switches that have 'on' or 'off' in their name.   
+To work around this, think about a unique sentence that doesn't match any other known action.   
+Then create an Alexa routine with that:
+![](docs/pics/alexa-routine.png)
+
 ### create automation that exposes switch as a webhook 
 
 This will allow you to remotely trigger the switch via an HTTP POST request.   
