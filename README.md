@@ -67,7 +67,7 @@ switch:
 
 ### expose switch to 'emulated hue' component 
 
-This will allow Alexa to see the switch as a Philips hue light.
+This will allow Alexa to see the switch as a Philips Hue light.
 
 ```yaml
 # configuration.yaml
