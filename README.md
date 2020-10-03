@@ -45,7 +45,7 @@ cp record.iq on-button.iq
 
 ## integrate with Home Assistant
 
-If you don't have HA yet, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
+If you don't have HA, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
 
 ### add as switch 
 
