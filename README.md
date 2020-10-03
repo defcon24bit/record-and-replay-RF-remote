@@ -83,7 +83,7 @@ emulated_hue:
 ### create automation that exposes switch as a webhook 
 
 This will allow you to remotely trigger the switch via an HTTP POST request. 
-Can be used for Google Home for example. 
+Can be used with Google Home for example. 
 
 ```yaml
 automation:
@@ -99,7 +99,7 @@ automation:
     mode: single
 ```
 
-#### create certificate on HA
+### create certificate on HA
 
 Only required if HA and rpitx run on different machines.  
 The certificate allows to remote execute ssh commands on another machine without a password prompt. 
@@ -126,19 +126,17 @@ chmod 600 ~/.ssh/*
 ## create webhooks without HA
 
 If you don't have HA, you can try creating webhooks with https://github.com/ncarlier/webhookd.
+Protecting this setup is beyond the scope of this repository. It's not a question if you get hacked, but when.  
+Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
 
-Protecting this setup is beyond the scope of this repository. 
-> It's not a question if you get hacked, but when.  Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
-
-
+<!--
 ## create IFTTT Applets
-
 1. Create a [new IFTTT Applet](https://ifttt.com/create).
 2. Select '+This' -> 'Amazon Alexa' or 'Google Assistant' -> 'Say a specific/simple phrase'.
 3. Select '+That' -> 'Webhooks' -> 'Make a web request'.
-
 URL ```https://<YOUR-HA>/api/webhook/<YOUR-WEBHOOK-ID>```
 Method: ```POST```.
+-->
 
 ## credits 
 
