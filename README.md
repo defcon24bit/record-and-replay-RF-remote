@@ -82,7 +82,7 @@ emulated_hue:
 
 ### create automation that exposes switch as a webhook 
 
-This will allow you to remotely trigger the switch via an HTTP POST request. 
+This will allow you to remotely trigger the switch via an HTTP POST request.   
 Can be used with Google Home for example. 
 
 ```yaml
