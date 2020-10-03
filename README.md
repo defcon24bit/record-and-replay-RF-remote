@@ -24,7 +24,7 @@ rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *above can also be done through the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)*
 
 5. CTRL + C to stop recording. (You can remove the RTL-SDR dongle when you're done recoding.  It's not required for sending)    
-6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pics/pi-elect-wire-on-pin-7.png).
+6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pi-gpio-pins-picture.md).
 7. Replay recording.  
 ```bash
 sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-on-button.iq
