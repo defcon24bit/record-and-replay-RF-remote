@@ -1,7 +1,7 @@
 # record and replay Radio Frequency (RF) remote signal 
 Record any replay any RF signal. (optional) Integrate with Home Assistant. Trigger replay with Alexa or Google Home.  
 ![](docs/pics/project-drawing.png)
-Common use cases: airconditioners, remote power plugs, fans, garage doors, shades and kitchen hoods.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  *Common use cases: airconditioners, remote power plugs, fans, garage doors, shades and kitchen hoods.*
 
 ## required hardware
 
@@ -125,7 +125,7 @@ chmod 600 ~/.ssh/*
 
 ## create webhooks without HA
 
-If you don't have HA, you can try creating webhooks with https://github.com/ncarlier/webhookd.
+If you don't have HA, you can try creating webhooks with https://github.com/ncarlier/webhookd.    
 Protecting this setup is beyond the scope of this repository. It's not a question if you get hacked, but when.  
 Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
 
