@@ -21,7 +21,7 @@ cd rpitx
 # this records on 868.00 MHz frequency and writes it to a fan-on-button.iq file
 rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
-> above can also be done through the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *above can also be done through the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)*
 
 5. CTRL + C to stop recording. (You can remove the RTL-SDR dongle when you're done recoding.  It's not required for sending)    
 6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pics/pi-elect-wire-on-pin-7.png).
@@ -60,7 +60,7 @@ switch:
 # ssh is only required if HA and rpitx run on different machines
         command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
         command_off: off
-# HA doesn't get feedback if the device is on or off.  So always return the switch back to off state.  
+# HA doesn't get feedback if the device is on or off.  This returns the switch always back to the off-state.  
         command_state: off
         friendly_name: Fan On
 ```
@@ -101,8 +101,8 @@ automation:
 
 #### create certificate on HA
 
-Only required if HA and rpitx run on different machines. 
-The certificate allows HA to remote execute commands on your PI without a password prompt. 
+Only required if HA and rpitx run on different machines.  
+The certificate allows to remote execute ssh commands on another machine without a password prompt. 
 
 create certificate
 ```bash
@@ -123,16 +123,13 @@ chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 ```
 
-## create webhooks
+## create webhooks without HA
 
-You need internet-facing webhooks to intercept the voice triggers we'll create later. 
+If you don't have HA, you can try creating webhooks with https://github.com/ncarlier/webhookd.
+
 Protecting this setup is beyond the scope of this repository. 
 > It's not a question if you get hacked, but when.  Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
 
-On your Pi
-> If you intend to integrate with [Home Assistant](https://www.home-assistant.io) (HA) you can skip the next step and jump direct to [integrate with Home Assistant](#integrate-with-home-assistant).  This is because HA has native webhook support. 
-
-Install and configure https://github.com/ncarlier/webhookd
 
 ## create IFTTT Applets
 
