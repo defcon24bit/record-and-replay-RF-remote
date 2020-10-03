@@ -82,7 +82,7 @@ emulated_hue:
 
 Alexa has trouble to voice-trigger devices that have 'on' or 'off' in their name.   
 To work around this, create an Alexa Routine with a unique sentence that doesn't match any other action or device.     
-I used *start* and *stop cooking* - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/alexa-routine-picture.md).
+I used *start*- and *stop cooking* - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/alexa-routine-picture.md).
 
 
 ### create automation that exposes switch as a webhook 
