@@ -80,10 +80,10 @@ emulated_hue:
       hidden: false
 ```
 
-Alexa has trouble understanding switches that have 'on' or 'off' in their name.   
-To work around this, think about a unique sentence that doesn't match any other known action.   
-Then create an Alexa routine with that:
-![](docs/pics/alexa-routine.png)
+Alexa has trouble to voice-trigger devices that have 'on' or 'off' in their name.   
+To work around this, create a Routine with a unique sentence that doesn't match any other action or device.     
+I used *start* and *stop cooking* - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/alexa-routine-picture.md).
+
 
 ### create automation that exposes switch as a webhook 
 
