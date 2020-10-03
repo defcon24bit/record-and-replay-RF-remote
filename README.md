@@ -91,6 +91,7 @@ This will allow you to remotely trigger the switch via an HTTP POST request.
 Can be used with Google Home for example. 
 
 ```yaml
+# configuration.yaml
 automation:
   - alias: webhook_fan_on
     trigger:
@@ -102,6 +103,10 @@ automation:
       entity_id: switch.fan_on
       service: switch.turn_on
     mode: single
+```
+Test the webhook
+```bash
+curl -X POST https://<YOUR-HA>.duckdns.org/api/webhook/<YOUR-WEBHOOK-ID>
 ```
 
 ### create certificate on HA
