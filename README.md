@@ -81,9 +81,8 @@ emulated_hue:
       hidden: false
 ```
 
-We created switches, not real devices.     
-Alexa has trouble to voice-trigger those.     
-To work around this, create an Alexa Routine with a unique sentence that doesn't match any other action or device.     
+Alexa gets confused if you create multiple devices with simular names.       
+To work around this, create Alexa Routines with a unique trigger sentences and avoid the words 'on' or 'off'.  
 I used *start*- and *stop cooking* - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/alexa-routine-picture.md).
 
 
