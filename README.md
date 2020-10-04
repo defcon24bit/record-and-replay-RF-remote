@@ -23,7 +23,8 @@ rtl_sdr -s 250000 -g 35 -f 868.0000e6 fan-on-button.iq
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *above can also be done through the [rtlmenu.sh GUI](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md)*
 
-5. CTRL + C to stop recording. (You can remove the RTL-SDR dongle when you're done recoding.  It's not required for sending)    
+5. CTRL + C to stop recording.  
+> You can remove the RTL-SDR dongle when you're done recoding.  It's not required for sending.    
 6. Add electrical wire to GPIO pin#7 (4th pin down, left row) - see [picture](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/pi-gpio-pins-picture.md).
 7. Replay recording.  
 ```bash
@@ -80,7 +81,8 @@ emulated_hue:
       hidden: false
 ```
 
-Alexa has trouble to voice-trigger devices that have 'on' or 'off' in their name.   
+We created switches, not real devices.     
+Alexa has trouble to voice-trigger those.     
 To work around this, create an Alexa Routine with a unique sentence that doesn't match any other action or device.     
 I used *start*- and *stop cooking* - see [example](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/alexa-routine-picture.md).
 
