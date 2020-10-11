@@ -59,7 +59,7 @@ switch:
     switches:
       fan_on:
 # ssh is only required if HA and rpitx run on different machines
-        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l >> /config/command.log"
+        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq"
         command_off: off
 # HA doesn't get feedback if the device is on or off.  This returns the switch always back to the off-state.  
         command_state: off
