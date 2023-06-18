@@ -54,16 +54,15 @@ Create a command line switch for everyone recording you want to replay.
 
 ```yaml
 # configuration.yaml
-switch:
-  - platform: command_line
-    switches:
-      fan_on:
+command_line:
+  - switch:
+      name: fan_on
+      unique_id: fan_on
 # ssh is only required if HA and rpitx run on different machines
-        command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq"
-        command_off: off
+      command_on: "ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq"
+      command_off: off
 # HA doesn't get feedback if the device is on or off.  This returns the switch always back to the off-state.  
-        command_state: off
-        friendly_name: Fan On
+      command_state: off
 ```
 
 ### expose switch to 'emulated hue' component 
