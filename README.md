@@ -97,6 +97,10 @@ automation:
     trigger:
     - platform: webhook
       webhook_id: <PICK-A-RANDOM-WEBHOOK-ID>
+      allowed_methods:
+        - POST
+        - PUT
+      local_only: false
     condition: []
     action:
     - data: {}
