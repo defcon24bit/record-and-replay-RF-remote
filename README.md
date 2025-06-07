@@ -75,7 +75,7 @@ script:
 ```
 
 #### command_line Switch
-Create a command line Switch for everyone recording you want to replay.
+or Create a command line Switche for everyone recording you want to replay.
 
 ```yaml
 # configuration.yaml
