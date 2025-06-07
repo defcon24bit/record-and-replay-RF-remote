@@ -48,9 +48,13 @@ cp record.iq on-button.iq
 
 If you don't have HA, start [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/install-hassio.md).  
 
-### add as switch 
+### add Entity in Home Assistant 
 
-Create a command line switch for everyone recording you want to replay.
+We'll use the command_line intergration with the Notify or Switch platform.  I'll give examples of both.  Switch requires a loop to turn the state back off.  Notify doesn't need this because it's stateless ( it has no on or off state ). Executing Notify can be combersome because you need to provide a message which we don't need.  Creating a Notify script with an empty message resolves this.  
+> First I used Switches.  But their turn-off loop gave strange errors in my logs.  I'm using Notify now instead. I would have prefered to use a Button Entity.  But none of the Button types seem to support command_line.  Do you see a better solution?  Great! Let me know by creating an issue.  
+
+#### command_line Notify
+Create a command line Notify for everyone recording you want to replay.  Then create a script for every notify.  
 
 ```yaml
 # configuration.yaml
