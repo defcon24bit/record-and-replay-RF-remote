@@ -59,6 +59,27 @@ Create a command line Notify for everyone recording you want to replay.  Then cr
 ```yaml
 # configuration.yaml
 command_line:
+  - notify: 
+      name: fan_on
+      command: 'ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l > /config/command.log'
+# because Notify, by itself, isn't a callable object, create a script for it 
+script:
+  fan_on:
+    sequence:
+      - action: notify.fan_on
+        metadata: {}
+        data:
+          message: " "
+    alias: fan_on
+    description: ""
+```
+
+#### command_line Switch
+Create a command line Switch for everyone recording you want to replay.
+
+```yaml
+# configuration.yaml
+command_line:
   - switch:
       name: fan_on
       unique_id: fan_on
