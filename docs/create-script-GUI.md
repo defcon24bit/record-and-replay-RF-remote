@@ -1,4 +1,4 @@
-[<- back to Read Me](https://github.com/defcon24bit/record-and-replay-RF-remote#record-and-replay-rf-signal)&nbsp;
+[<- back to Read Me](https://github.com/defcon24bit/record-and-replay-RF-remote#command_line-notify)&nbsp;
 
 ![](pics/script-GUI-screen-shot-1.png)&nbsp;
 ![](pics/script-GUI-screen-shot-2.png)&nbsp;
@@ -9,6 +9,6 @@
 ![](pics/script-GUI-screen-shot-7.png)&nbsp;
 ![](pics/script-GUI-screen-shot-8.png)&nbsp;
 
-[<- back to Read Me](https://github.com/defcon24bit/record-and-replay-RF-remote#record-and-replay-rf-signal)
+[<- back to Read Me](https://github.com/defcon24bit/record-and-replay-RF-remote##command_line-notify)
 
 
