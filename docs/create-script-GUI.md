@@ -9,6 +9,6 @@
 ![](pics/script-GUI-screen-shot-7.png)&nbsp;
 ![](pics/script-GUI-screen-shot-8.png)&nbsp;
 
-[<- back to Read Me](https://github.com/defcon24bit/record-and-replay-RF-remote##command_line-notify)
+[<- back to Read Me](https://github.com/defcon24bit/record-and-replay-RF-remote#command_line-notify)
 
 
