@@ -51,10 +51,10 @@ If you don't have HA, start [here](https://github.com/defcon24bit/record-and-rep
 ### add Entity in Home Assistant 
 
 We'll use the command_line intergration with the Notify or Switch platform.  I'll give examples of both.  Switch requires a loop to turn the state back off.  Notify doesn't need this because it's stateless ( it has no On or Off state ). Executing Notify can be combersome because you need to provide a message which we don't need.  Creating a Notify script with an empty message resolves this.  
-> First I used Switches.  But their turn-off loop gave strange errors in my logs.  I'm using Notify now instead. I would have prefered to use a Button Entity.  But none of the Button types seem to support command_line.  Do you see a better solution?  Great! Let me know by creating an issue.  
+> First I used Switches.  But their turn-off loop gave strange errors in my logs.  I'm using Notify now instead. I prefered to use a Button Entity.  But none of the current Home Assisatnt Button types seem to support command_line.  Do you see a better solution?  Great! Let me know by creating an issue.  
 
 #### command_line Notify
-Create a command line Notify for everyone recording you want to replay.  Then create a script for every notify.  
+Create a command line Notify for everyone recording you want to replay.   
 
 ```yaml
 # configuration.yaml
@@ -62,6 +62,11 @@ command_line:
   - notify: 
       name: fan_on
       command: 'ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l > /config/command.log'
+```
+Then create a script in the GUI - see [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md).\
+Or use the code below.     
+
+```yaml
 # because Notify, by itself, isn't a callable object, create a script for it 
 script:
   fan_on:
@@ -73,9 +78,8 @@ script:
     alias: fan_on
     description: ""
 ```
-
 #### command_line Switch
-or Create a command line Switche for everyone recording you want to replay.
+or Create a command line Switch for everyone recording you want to replay.
 
 ```yaml
 # configuration.yaml
