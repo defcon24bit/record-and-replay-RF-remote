@@ -50,7 +50,7 @@ If you don't have HA, start [here](https://github.com/defcon24bit/record-and-rep
 
 ### add Entity in Home Assistant 
 
-We'll use the command_line intergration with the Notify or Switch platform.  I'll give examples of both.  Switch requires a loop to turn the state back off.  Notify doesn't need this because it's stateless ( it has no On or Off state ). Executing Notify can be combersome because you need to provide a message which we don't need.  Creating a Notify script with an empty message resolves this.  
+I used command_line with Notify or Switch.  Switch requires a loop to turn the state back off.  Notify doesn't need this because it's stateless ( it has no On or Off state ). Executing Notify can be combersome because you need to provide a message which we don't need.  Creating a Notify script with an empty message resolves this.  
 > First I used Switches.  But their turn-off loop gave strange errors in my logs.  I'm using Notify now instead. I prefered to use a Button Entity.  But none of the current Home Assisatnt Button types seem to support command_line.  Do you see a better solution?  Great! Let me know by creating an issue.  
 
 #### command_line Notify
