@@ -170,7 +170,6 @@ chmod 600 ~/.ssh/*
 
 If you don't have HA, you can try creating webhooks with https://github.com/ncarlier/webhookd.    
 Protecting this setup is beyond the scope of this repository. It's not a question if you get hacked, but when.  
-Consider using an [nginx proxy](https://nginx.org/en/), [Let's Encrypt](https://letsencrypt.org) and [Duck DNS](https://www.duckdns.org).
 
 <!--
 ## create IFTTT Applets
