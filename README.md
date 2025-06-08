@@ -5,7 +5,7 @@ Common use cases: airconditioners, remote power plugs, fans, shades and kitchen 
 
 ## required hardware
 
-* Raspberry Pi 
+* Raspberry Pi (check https://github.com/F5OEO/rpitx#hardware for supported versions)
 * radio receiver USB dongle (RTL-SDR with RTL2832U chipset)
 
 ## record and replay RF signal 
