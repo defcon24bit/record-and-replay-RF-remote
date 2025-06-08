@@ -1,6 +1,10 @@
-1. Install [Home Assistant](https://www.home-assistant.io/getting-started/).
-2. Add DuckDNS add-on.  See add-on store under Supervisor.
-This is only required if you want to use webhooks.  
+1) Install [Home Assistant](https://www.home-assistant.io/getting-started/).
+
+(optional) Expose your Home Assistant to the internet:
+
+2) Install https://github.com/brenner-tobias/addon-cloudflared (prefered - free, but requires you buy or own a domain)   
+or  
+Add DuckDNS add-on.  See add-on store under Supervisor.  
 This add-on incudes Let's Encrypt. 
 
 Tip: block IPs that try to brute force logins.
