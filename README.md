@@ -51,7 +51,7 @@ If you don't have HA, start [here](https://github.com/defcon24bit/record-and-rep
 ### add Entity in Home Assistant 
 
 I used ```command_line``` with ```notify``` or ```switch```.  Switch requires a loop to turn the state back ```off```.  Notify doesn't need this because it's stateless ( it has no ```on``` or ```off``` state ). Executing ```notify``` can be combersome because you need to provide a message which we don't need.  Creating a notify ```script``` with an empty message resolves this.  
-> First I used ```switch```.  But its turn-off loop gave strange errors in my logs.  I'm using ```notify``` now instead. I prefered to use a Button Entity.  But none of the current Home Assistant Button types seem to support command_line.  Do you see a better solution?  Great! Let me know by creating an issue.  
+> First I used ```switch```.  But its turn-off loop gave strange errors in my logs.  I'm using ```notify``` now instead. I prefered to use a Button Entity.  But none of the current Home Assistant Button types seem to support ```command_line```.  Do you see a better solution?  Great! Let me know by creating an issue.  
 
 #### command_line Notify
 Create a command line Notify for everyone recording you want to replay.   
