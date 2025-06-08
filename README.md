@@ -63,7 +63,7 @@ command_line:
       name: fan_on
       command: 'ssh -i /config/id_rsa -o StrictHostKeyChecking=no -q pi@<YOUR.PI.IP.ADDRESS> sudo ./rpitx/sendiq -s 250000 -f 868.0000e6 -t u8 -i ./rpitx/fan-all-on.iq | wc -l > /config/command.log'
 ```
-Then create a script in the GUI - see [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/record-RF-signal-screenshots.md).\
+Then create a script in the GUI - see [here](https://github.com/defcon24bit/record-and-replay-RF-remote/tree/master/docs/create-script-GUI.md).\
 Or use the code below.     
 
 ```yaml
