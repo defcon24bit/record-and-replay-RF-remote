@@ -3,7 +3,7 @@
 (optional) Expose your Home Assistant to the internet:
 
 2) Install https://github.com/brenner-tobias/addon-cloudflared (prefered - free, but requires you to buy or own a domain name)
-> I only had one domain name that was already pointing to a website.  By default, this addon creates a sub-domain.  You can run a website and this addon side by side without issues.   Example: wwww.<yourdomain.xyz> and homeassistant.<yourdomain.xyz> 
+> I only had one domain name that was already pointing to a website.  By default, this addon creates a sub-domain.  You can run both side by side without issues.   Example: wwww.<yourdomain.xyz> and homeassistant.<yourdomain.xyz> 
  
 or  
 Add DuckDNS add-on.  See add-on store under Supervisor.  
